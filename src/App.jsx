@@ -22,17 +22,21 @@ function App() {
 
   return (
     
-    <div id='main' className='clipping-container  border  bg-stone-800 h-screen flex  justify-center '>
-      <div className='item-center w-96 h-8  '>
+    <div className='p-10 text-center '>
+      
       <button
       type='submit'
       onClick={handleClick}
-      className='rounded-full border-2 border-slate-600 border-solid px-4 bg-blue-400/50'>
-      button
+      className='text-white bg-blue-600 hover:bg-blue-700 focus:outline-none font-medium text-sm rounded-lg px-5 py-2 text-center mr-5'>
+      Create New one
+     
       </button>
+      <div className='p-20'>
+      {isOpen &&   <Modal setIsOpen={setIsOpen} >ahjklsfkasfasf</Modal> }
       </div>
+      
     
-      {isOpen &&   <Modal setIsOpen={setIsOpen} />  }
+     
 
     </div>
     

@@ -1,12 +1,12 @@
-export default function Modal ({setIsOpen}){
+export default function Modal ({setIsOpen,children}){
     return(
-        <div className="flex  bg-black/20 justify-center h-screen w-screen ">
-            <button type="button" className="border " onClick={() =>{setIsOpen(false)}} > close </button>
-        <form className="w-500 h-96 bg-white rounded border-solid  bg-blue-400/50 border-4  " >
-        <input  type="text" className="rounded-full border-2 border-slate-600 border-solid px-4 bg-blue-400/50 " />
-        <input type="text" className="rounded-full border-2 border-slate-600 border-solid px-4 bg-blue-400/50 " />
-        <input type="url" className="rounded-full border-2 border-slate-600 border-solid px-4 bg-blue-400/50" />
-        </form>
+        <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center ">
+            
+        <div className="w-[500px] h-[400px] flex flex-col" >
+        <button type="button" className="text-white text-xl place-self-end " onClick={() =>{setIsOpen(false)}} > X </button>
+        <div className="bg-white p-2" > {children}</div> 
+        </div>
+       
         
       </div>
     )
