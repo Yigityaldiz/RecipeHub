@@ -1,6 +1,6 @@
-import addRecipe from "./AddRecipe"
 
-export default function Modal ({setIsOpen,children,addRecipe}){
+
+export default function Modal ({setIsOpen,children}){
     return(
         <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center  ">
             
