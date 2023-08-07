@@ -12,6 +12,9 @@ function App() {
  const handleClick = () => {
   setIsOpen(true)
  }
+ const [name ,setName] = useState(null);
+ const [recipe , setRecipe] = useState(null);
+ const [url,setUrl] = useState(null)
 
  useEffect(()=>{
 
@@ -36,7 +39,7 @@ function App() {
       </div>
       
       <div className='p-20'>
-      {isOpen &&   <Modal setIsOpen={setIsOpen} > <AddRecipe/> </Modal> }
+      {isOpen &&   <Modal setIsOpen={setIsOpen} > <AddRecipe name ={setName} recipe = {setRecipe} url={setUrl} /> </Modal> }
       </div>
       
     
