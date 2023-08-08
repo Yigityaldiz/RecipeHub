@@ -3,7 +3,14 @@ import Modal from './components/Modal';
 import './App.css'
 import { createPortal } from 'react-dom';
 import AddRecipe from './components/AddRecipe';
+import { Block } from './components/Block';
 
+
+const recipes = JSON.parse(localStorage.getItem('recipes') || "[]")
+
+
+
+console.log(recipes);
 
 
 function App() {
@@ -15,10 +22,18 @@ function App() {
  const [name ,setName] = useState(null);
  const [recipe , setRecipe] = useState(null);
  const [url,setUrl] = useState(null)
+ 
+
+
 
  
 
  useEffect(()=>{
+
+  
+
+  
+  
 
   
     
@@ -32,9 +47,9 @@ function App() {
 
   return (
     
-    <div className='p-10 text-center  h-screen bg-gray-800 grid   '>
+    <div className='p-2 text-center  h-auto bg-gray-800 grid  '>
       
-      <div className='bg-gray-600 pb] h-[100px] '>
+      <div className='bg-gray-600 pb] h-[300px] '>
         <h1>RECIPES</h1>
       <button
       type='submit'
@@ -45,23 +60,24 @@ function App() {
       </button>
       </div>
       
-      <div className='p-20 bg-gray-500 h-[700px] grid grid-cols-2 gap-4'>
-      <div className='bg-gray-800'></div>
-      <div className='bg-gray-800'></div>
-      <div className='bg-gray-800'></div>
-      <div className='bg-gray-800'></div>
-      <div className='bg-gray-800'></div>
-      <div className='bg-gray-800'></div>
+      <div  id ='main' className='p-4 bg-gray-500 h-[573px] my-2 grid grid-cols-3 gap-4 border rounded-lg  '>
+        <Block recipes={recipes} />
 
+     
+      </div>
+      
+      
+      
+     
       
 
 
 
-
+    <div>
       {isOpen &&   
       <Modal setIsOpen={setIsOpen} >
       <AddRecipe name={name} recipe={recipe} url={url} setName ={setName} setRecipe = {setRecipe} setUrl={setUrl} setIsOpen={setIsOpen} /> 
-      </Modal> }
+      </Modal > }
       </div>
  
       

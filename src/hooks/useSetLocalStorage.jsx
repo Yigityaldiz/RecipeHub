@@ -11,8 +11,10 @@ export default function useSetLocalStorage (name,recipe,url){
     recipe : recipe,
     url : url}
 
+    localStorage.setItem('recipes', JSON.stringify(recipes))
+
     recipes.push(recipex)
     
 
-     localStorage.setItem('recipes', JSON.stringify(recipes))
+     
 }
