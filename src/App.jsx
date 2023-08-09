@@ -4,6 +4,7 @@ import './App.css'
 import { createPortal } from 'react-dom';
 import AddRecipe from './components/AddRecipe';
 import { Block } from './components/Block';
+import { EditRecipes } from './components/EditRecipe';
 
 
 
@@ -20,6 +21,8 @@ function App() {
  const [url,setUrl] = useState(null)
  const [rec,setRec] = useState()
  const storedItems = JSON.parse(localStorage.getItem('recipes'))
+
+ EditRecipes()
  
  
  
@@ -51,25 +54,10 @@ function App() {
       </div>
       
       <div  id ='main' className='p-4 bg-gray-500 h-[573px] my-2 grid grid-cols-3 gap-4 border rounded-lg  '>
-        {/* <Block recipes ={storedItems}  /> */}
-
-        <div  id ='block' className=' bg-gray-800  justify-center items-center  h-[300px] hover:outline-blue-600 rounded-lg outline outline-2  outline-blue-500 hover:outline-4  '>
-            
-
-            <img  id='blockImage' className=' className="  border h-[150px] w-[250px]  rounded-lg m-2  ' />
-            <div className='items-center flex justify-center'>
-              <p className='   h-[100px] items-center flex text-white underline'>jhasfjashfkjashfjksfasdsadsadsd</p>
-              </div>
-            
-            
-            
-            
-             
+        <Block recipes ={storedItems} setIsOpen = {setIsOpen} isOpen ={isOpen} />
         
-         
-    
-         
-         </div>
+
+       
 
      
       </div>
@@ -87,6 +75,8 @@ function App() {
       <AddRecipe name={name} recipe={recipe} url={url} setName ={setName} setRecipe = {setRecipe} setUrl={setUrl} setIsOpen={setIsOpen} /> 
       </Modal > }
       </div>
+
+      
  
       
       
