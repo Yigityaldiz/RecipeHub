@@ -4,8 +4,11 @@
 export const Block = ({recipes,setIsEditOpen}) =>{
 
     const handleClick = () => {
+
+        
        
-        {setIsEditOpen(true)}
+        {setIsEditOpen(false)}
+
        }
 
     
@@ -14,7 +17,7 @@ export const Block = ({recipes,setIsEditOpen}) =>{
 
     return(
   <>
-      { recipes?.map((recipe) =>(
+      { recipes?.map((recipe,i) =>(
 
         <div  id ='block' className=' bg-gray-800  justify-center items-center  h-[300px] hover:outline-blue-600 rounded-lg outline outline-2  outline-blue-500 hover:outline-4  '>
             
@@ -24,7 +27,7 @@ export const Block = ({recipes,setIsEditOpen}) =>{
               <p className='   h-[100px] items-center flex text-white underline'>{recipe.name}</p>
               </div>
               <button
-               onClick={handleClick}
+               onClick={handleClick()}
               
                className='float-right shadow-lg shadow-blue-500/50 text-white bg-blue-600 hover:bg-blue-700 focus:outline-none font-medium text-sm rounded-lg px-6 py-2 m  '>
                 edit
