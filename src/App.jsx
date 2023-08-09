@@ -6,44 +6,34 @@ import AddRecipe from './components/AddRecipe';
 import { Block } from './components/Block';
 
 
-const recipes = JSON.parse(localStorage.getItem('recipes') || "[]")
 
 
-
-console.log(recipes);
-
+// const recipes = JSON.parse(localStorage.getItem('recipes') || "[]")
 
 function App() {
 
+ 
+ 
  const [isOpen, setIsOpen] = useState(false);
- const handleClick = () => {
-  setIsOpen(true)
- }
  const [name ,setName] = useState(null);
  const [recipe , setRecipe] = useState(null);
  const [url,setUrl] = useState(null)
+ const [rec,setRec] = useState()
+ const storedItems = JSON.parse(localStorage.getItem('recipes'))
+ 
+ 
  
 
-
-
  
+ const handleClick = () => {
+  setIsOpen(true)
+ }
 
- useEffect(()=>{
-
-  
-
-  
-  
-
-  
+  useEffect(()=>{
     
-  
-
-
- },[])
-
- 
-  
+    console.log(storedItems)
+    
+  },)
 
   return (
     
@@ -61,7 +51,25 @@ function App() {
       </div>
       
       <div  id ='main' className='p-4 bg-gray-500 h-[573px] my-2 grid grid-cols-3 gap-4 border rounded-lg  '>
-        <Block recipes={recipes} />
+        {/* <Block recipes ={storedItems}  /> */}
+
+        <div  id ='block' className=' bg-gray-800  justify-center items-center  h-[300px] hover:outline-blue-600 rounded-lg outline outline-2  outline-blue-500 hover:outline-4  '>
+            
+
+            <img  id='blockImage' className=' className="  border h-[150px] w-[250px]  rounded-lg m-2  ' />
+            <div className='items-center flex justify-center'>
+              <p className='   h-[100px] items-center flex text-white underline'>jhasfjashfkjashfjksfasdsadsadsd</p>
+              </div>
+            
+            
+            
+            
+             
+        
+         
+    
+         
+         </div>
 
      
       </div>
