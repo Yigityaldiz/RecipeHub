@@ -1,13 +1,21 @@
-import useSetLocalStorage from "../hooks/useSetLocalStorage"
-import Modal from "./Modal"
 
-export const EditRecipes = () =>{
 
-  
 
+export const EditRecipes = ({setIsOpen, items,recipes}) =>{
+
+   
+    const handleDelete = (itemToDelete) => {
+       
+        
+    }
 
 
     return(
+
+
+
+      
+        
         <div className="py-12 px-12 lg:px-8 text-left space-y-8   ">
         <div>
             <label htmlFor="name"> 
@@ -53,10 +61,13 @@ export const EditRecipes = () =>{
         className='float-right shadow-lg shadow-blue-500/50 text-white bg-blue-600 hover:bg-blue-700 focus:outline-none font-medium text-sm rounded-lg px-6 py-2   '>Save</button>
 
         <button
-        onClick={(e) =>{setIsOpen(false),addLocalStorage(e) }}
+        
+        onClick={handleDelete }
         
         className='float-right shadow-lg shadow-blue-500/50 text-white bg-red-600 hover:bg-red-700 focus:outline-none font-medium text-sm rounded-lg px-6 py-2 mr-2  '>Delete</button>
        </div>
+
+
 
 
 

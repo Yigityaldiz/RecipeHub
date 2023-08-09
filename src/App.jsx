@@ -16,13 +16,19 @@ function App() {
  
  
  const [isOpen, setIsOpen] = useState(false);
+ const [isEditOpen, setIsEditOpen] = useState(false);
+
  const [name ,setName] = useState(null);
  const [recipe , setRecipe] = useState(null);
  const [url,setUrl] = useState(null)
- const [rec,setRec] = useState()
- const storedItems = JSON.parse(localStorage.getItem('recipes'))
+ 
+ const storedItems = JSON.parse(localStorage.getItem('recipes') )
 
- EditRecipes()
+ const [item ,setItem] = useState(storedItems)
+
+ 
+
+ 
  
  
  
@@ -33,8 +39,8 @@ function App() {
  }
 
   useEffect(()=>{
-    
-    console.log(storedItems)
+   
+   
     
   },)
 
@@ -54,7 +60,8 @@ function App() {
       </div>
       
       <div  id ='main' className='p-4 bg-gray-500 h-[573px] my-2 grid grid-cols-3 gap-4 border rounded-lg  '>
-        <Block recipes ={storedItems} setIsOpen = {setIsOpen} isOpen ={isOpen} />
+        <Block recipes ={storedItems} setIsOpen = {setIsOpen} setIsEditOpen ={setIsEditOpen} />
+
         
 
        
@@ -73,6 +80,14 @@ function App() {
       {isOpen &&   
       <Modal setIsOpen={setIsOpen} >
       <AddRecipe name={name} recipe={recipe} url={url} setName ={setName} setRecipe = {setRecipe} setUrl={setUrl} setIsOpen={setIsOpen} /> 
+      </Modal > }
+      </div>
+
+      <div>
+
+      {isEditOpen &&   
+      <Modal setIsOpen={setIsEditOpen} >
+      <EditRecipes setIsOpen={setIsEditOpen}  recipes={storedItems}/> 
       </Modal > }
       </div>
 
