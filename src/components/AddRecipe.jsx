@@ -1,10 +1,10 @@
 import useSetLocalStorage from "../hooks/useSetLocalStorage"
 
-export default function AddRecipe({setName,setRecipe,setUrl,name,recipe,url,setIsOpen}){
+export default function AddRecipe({setName,setRecipe,setUrl,name,recipe,url,setIsOpen,setStoredItems}){
 
    const addLocalStorage = (e)=>{
     
-    useSetLocalStorage(name,recipe,url)
+    useSetLocalStorage(name,recipe,url,setStoredItems)
     }
     
     

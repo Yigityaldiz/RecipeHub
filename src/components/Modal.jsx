@@ -1,7 +1,8 @@
 
 
-export default function Modal ({setIsOpen,children}){
+export default function Modal ({setIsOpen,children,isOpen}){
     return(
+    
         <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center  ">
             
         <div className="w-[500px]  flex flex-col" >

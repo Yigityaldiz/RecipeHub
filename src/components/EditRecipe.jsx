@@ -5,8 +5,10 @@ export const EditRecipes = ({setIsOpen, recipes}) =>{
 
    
     const handleDelete = (itemToDelete) => {
-  
+     { setIsOpen(false)}
     }
+
+    console.log(recipes)
         
   
 
@@ -16,16 +18,18 @@ export const EditRecipes = ({setIsOpen, recipes}) =>{
 
 
 
-    <> {recipes.map((recipe,i)=>(
+   
 
-        <div key={i} className="py-12 px-12 lg:px-8 text-left space-y-8   ">
+        
+
+        <div  className="py-12 px-12 lg:px-8 text-left space-y-8   ">
 
             
         <div>
           
             <label htmlFor="name"> 
             Name:
-               <p>{recipe.name}</p>
+               <p>{recipes.name}</p>
              
              </label>
         </div>
@@ -47,7 +51,7 @@ export const EditRecipes = ({setIsOpen, recipes}) =>{
 
         <button
         
-        onClick={handleDelete }
+        onClick={handleDelete}
         
         className='float-right shadow-lg shadow-blue-500/50 text-white bg-red-600 hover:bg-red-700 focus:outline-none font-medium text-sm rounded-lg px-6 py-2 mr-2  '>Delete</button>
        </div>
@@ -59,8 +63,7 @@ export const EditRecipes = ({setIsOpen, recipes}) =>{
 
 
 
-    ))}</>
-      
+    
         
        
 
