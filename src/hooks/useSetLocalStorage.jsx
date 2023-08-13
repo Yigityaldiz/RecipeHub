@@ -1,6 +1,6 @@
 
 
-export default function useSetLocalStorage (name,recipe,url,setStoredItems){
+export default function useSetLocalStorage (name,recipe,url,setStoredItems,storedItem){
 
     const recipex= {
         name : name,
@@ -12,11 +12,10 @@ export default function useSetLocalStorage (name,recipe,url,setStoredItems){
     }
 
 
-    const recipes = JSON.parse(localStorage.getItem('recipes') || "[]")
-  
+   
 
-    recipes.push(recipex)
-    localStorage.setItem('recipes', JSON.stringify(recipes)) 
+    storedItem.push(recipex)
+    localStorage.setItem('recipes', JSON.stringify(storedItem)) 
     setStoredItems(JSON.parse(localStorage.getItem('recipes') || "[]"))
 
 

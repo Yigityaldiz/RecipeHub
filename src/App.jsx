@@ -23,13 +23,13 @@ function App() {
  const [url,setUrl] = useState(null)
  const [editRecipe , setEditRecipe]= useState()
  
- const items = JSON.parse(localStorage.getItem('recipes') )
+ const items = JSON.parse(localStorage.getItem('recipes') || "[]")
 
  const[storedItems ,setStoredItems] = useState(items)
 
  
 
-
+console.log(storedItems)
  
  
  
@@ -48,10 +48,10 @@ function App() {
 
   return (
     
-    <div className='p-2 text-center  h-auto bg-gray-800 grid  '>
+    <div className='p-2 text-center  h-auto bg-[#B1B2FF] grid  '>
       
-      <div className='bg-gray-600 pb] h-[300px] '>
-        <h1>RECIPES</h1>
+      <div className='  h-[300px] '>
+        <h1 className='font-bold text-[100px] text-color-[#AAC4FF]'>RecipeHub</h1>
       <button
       type='submit'
       onClick={handleClick}
@@ -61,7 +61,7 @@ function App() {
       </button>
       </div>
       
-      <div  id ='main' className='p-4 bg-gray-500 h-[573px] my-2 grid grid-cols-3 gap-4 border rounded-lg  '>
+      <div  id ='main' className='p-4 bg-[#D2DAFF] h-[573px] my-2 grid grid-cols-3 gap-4 border rounded-lg  '>
         <Block recipes ={storedItems} setIsOpen = {setIsOpen} setIsEditOpen ={setIsEditOpen} setEditRecipe = {setEditRecipe} />
 
         
@@ -81,7 +81,7 @@ function App() {
     <div>
       {isOpen &&   
       <Modal setIsOpen={setIsOpen} >
-      <AddRecipe name={name} recipe={recipe} url={url} setName ={setName} setRecipe = {setRecipe} setUrl={setUrl} setIsOpen={setIsOpen} setStoredItems = {setStoredItems} /> 
+      <AddRecipe name={name} recipe={recipe} url={url} setName ={setName} setRecipe = {setRecipe} setUrl={setUrl} setIsOpen={setIsOpen} setStoredItems = {setStoredItems} storedItems={storedItems} /> 
       </Modal > }
       </div>
 
@@ -89,7 +89,7 @@ function App() {
 
       {isEditOpen &&   
       <Modal setIsOpen={setIsEditOpen} >
-      <EditRecipes setIsOpen={setIsEditOpen}  recipes={editRecipe}/> 
+      <EditRecipes setIsOpen={setIsEditOpen}  editRecipes={editRecipe} setEditRecipe={setEditRecipe} storedItems ={storedItems} setStoredItems ={setStoredItems}  /> 
       </Modal > }
       </div>
 

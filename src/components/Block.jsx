@@ -14,18 +14,16 @@ export const Block = ({recipes,setIsEditOpen,setEditRecipe}) =>{
         
         setIsEditOpen(true)
        
-       
-
        }
        
-
+      console.log("blocktaki recipes", recipes)
     
 
 
 
     return(
   <>
-      { recipes?.map((recipe,i) =>(
+      { recipes?.map((recipe) =>(
 
         <div key={recipe.id} id ='block' className=' bg-gray-800  justify-center items-center  h-[300px] hover:outline-blue-600 rounded-lg outline outline-2  outline-blue-500 hover:outline-4  '>
             
