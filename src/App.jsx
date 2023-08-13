@@ -48,7 +48,7 @@ console.log(storedItems)
 
   return (
     
-    <div className='p-2 text-center  h-auto bg-[#B1B2FF] grid  '>
+    <div className='p-4 text-center   bg-[#B1B2FF] grid  '>
       
       <div className='  h-[300px] '>
         <h1 className='font-bold text-[100px] text-color-[#AAC4FF]'>RecipeHub</h1>

@@ -37,7 +37,7 @@ export default function AddRecipe({setName,setRecipe,setUrl,name,recipe,url,setI
       <div>
         <label htmlFor="recipe">
            Recipe:
-         <input  onChange={(e)=>{setRecipe(e.target.value)  }}
+         <textarea  onChange={(e)=>{setRecipe(e.target.value)  }}
          id="recipe"
          placeholder="Repice "
          type="text"
