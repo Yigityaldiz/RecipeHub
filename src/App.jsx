@@ -48,20 +48,23 @@ console.log(storedItems)
 
   return (
     
-    <div className='p-4 text-center   bg-[#B1B2FF] grid  '>
+    <div className='p-4 text-center  bg-[#B1B2FF] grid h-screen   '>
       
-      <div className='  h-[300px] '>
-        <h1 className='font-bold text-[100px] text-color-[#AAC4FF]'>RecipeHub</h1>
-      <button
+      <div className='  h-[300px]    '>
+        <h1 className='font-bold text-[100px] text-color-[#AAC4FF] h-[120px]'>RecipeHub</h1>
+       
+        <button
       type='submit'
       onClick={handleClick}
-      className='text-white bg-blue-600 hover:bg-blue-700 focus:outline-none font-medium text-sm rounded-lg px-5 py-2  mr-5 float-right'>
+      className='text-white bg-blue-600 hover:bg-blue-700 focus:outline-none font-medium text-m rounded-lg px-5 py-2   h-[50px]  my-[120px] ml-[1120px]'>
       Create New one
      
       </button>
+        
+     
       </div>
       
-      <div  id ='main' className='p-4 bg-[#D2DAFF] h-[573px] my-2 grid grid-cols-3 gap-4 border rounded-lg  '>
+      <div  id ='main' className='p-4 bg-[#D2DAFF] h-[100%] my-2 grid grid-cols-1 overflow-x-auto gap-4 border rounded-lg  '>
         <Block recipes ={storedItems} setIsOpen = {setIsOpen} setIsEditOpen ={setIsEditOpen} setEditRecipe = {setEditRecipe} />
 
         

@@ -25,19 +25,31 @@ export const Block = ({recipes,setIsEditOpen,setEditRecipe}) =>{
   <>
       { recipes?.map((recipe) =>(
 
-        <div key={recipe.id} id ='block' className=' bg-gray-800  justify-center items-center  h-[300px] hover:outline-blue-600 rounded-lg outline outline-2  outline-blue-500 hover:outline-4  '>
+        <div key={recipe.id} id ='block' className=' bg-gray-800  justify-center items-center w-[100%]  h-[100%] hover:outline-blue-600 rounded-lg outline outline-2  outline-blue-500 hover:outline-4  '>
+            
+            <h2 className=' h-[50px] font-bold text-[30px]  text-white underline '>{recipe.name}</h2>
+            
+            
+            <img  id='blockImage' className=' className="  border h-[200px] w-[350px]  rounded-lg mx-4  float-left   ' src = {recipe.url} />
+            
+            <p  className="text-left text-green-50 h-[]  "> {recipe.recipe} </p>
+           
+            
             
 
-            <img  id='blockImage' className=' className="  border h-[150px] w-[250px]  rounded-lg m-2   ' src = {recipe.url} />
-            <div className='items-center flex justify-center'>
-              <p className='   h-[100px] items-center flex text-white underline'>{recipe.name}</p>
-              </div>
-              <button
+            <div>
+            <button
                onClick={()=>{handleClick(recipe.id)}}
               
-               className='float-right shadow-lg shadow-blue-500/50 text-white bg-blue-600 hover:bg-blue-700 focus:outline-none font-medium text-sm rounded-lg px-6 py-2 m  '>
+               className='float-right shadow-lg shadow-blue-500/50 text-white bg-blue-600 hover:bg-blue-700 focus:outline-none font-medium text-sm rounded-lg px-6 py-2 mt-[200px] mr-3 mb-2  '>
                 edit
                 </button>
+            </div>
+
+            
+              
+
+             
             
             
             
